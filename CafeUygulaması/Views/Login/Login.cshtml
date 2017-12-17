@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+        {
+            <label>Kullanıcı Adı: </label><input type="text" name="Kadi" placeholder="Kullanıcı Adı" />
+            <br />
+            <label>Şifre: </label><input type="password" name="Sifre" placeholder="Şifre" />
+            <br />
+            <button>Giriş Yap</button>
+        }
+    </div>
+</body>
+</html>

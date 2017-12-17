@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CafeUygulaması.Models.ModelClass.UserOrdersModel>
+
+@{
+    ViewBag.Title = "Orders";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<br /><br /><br />
+
+<h2>Orders</h2>
+<br />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ürün Adı</th>
+            <th>Kategori</th>
+            <th>Adet</th>
+            <th>Tutar</th>
+            <th>Sipariş Tarihi</th>
+            <th>Durum</th>
+        </tr>
+    </thead>
+    <tbody style="align-items:center;">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.ProductName</td>
+                <td>@item.CategoryName</td>
+                <td>@item.Adet</td>
+                <td>@item.Tutar</td>
+                <td>@item.OrderDate</td>
+                <td>
+                    @{ if (item.Durum == "0")
+                { <label style="color:darkorange">Beklemede</label> }
+                else if (item.Durum == "1")
+                { <label style="color:purple">Dağıtıma Çıkarıldı</label> }
+                else if (item.Durum == "2")
+                { <label style="color:green">Teslim Edildi</label> }
+                else if (item.Durum == "3")
+                { <label style="color:red">Iptal Edildi</label> }
+                    }
+                </td>
+            </tr>
+                        }
+    </tbody>
+</table>
+
+<br /><br /><br />

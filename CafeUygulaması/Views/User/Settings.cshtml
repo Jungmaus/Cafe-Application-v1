@@ -1,0 +1,35 @@
+﻿@model CafeUygulaması.Models.Users
+
+@{
+    ViewBag.Title = "Settings";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Settings</h2>
+<center>
+    <div class="form-horizontal">
+        <b><label>Kullanıcı Adınız: </label></b> @Model.Kadi
+        <br />
+        <b><label>Şifreniz: </label></b> @Model.Sifre
+        <br />
+        <b><label>Adınız: </label></b> @Model.Ad
+        <br />
+        <b><label>Soyadınız: </label></b> @Model.Soyad
+        <br />
+        <b><label>Bakiyeniz: </label><label style="color:red;">@Model.Bakiye TL </label></b>
+    </div>
+</center>
+
+<br /><br /><br /><br />
+
+@using (Html.BeginForm("Settings", "User", FormMethod.Post))
+{
+    <form style="align-items:center;">
+        <label class="control-label">Kullanıcı Adı: </label><input name="Kadi" class="form-control" type="text" maxlength="15" placeholder="Kullanıcı Adı" value="@Model.Kadi.Trim()" required="required" />
+        <label class="control-label">Şifre: </label><input name="Sifre" class="form-control" type="text" maxlength="20" placeholder="Şifre" value="@Model.Sifre.Trim()" required="required" />
+        <label class="control-label">Ad: </label><input name="Ad" class="form-control" type="text" maxlength="20" placeholder="Ad" value="@Model.Ad.Trim()" required="required" />
+        <label class="control-label">Soyad: </label><input name="Soyad" class="form-control" type="text" maxlength="20" placeholder="Soyad" value="@Model.Soyad.Trim()" required="required" />
+        <br />
+        <center><button type="submit" class="btn btn-info">Güncelle ! <span class="glyphicon glyphicon-save"></span></button></center>
+    </form>
+}

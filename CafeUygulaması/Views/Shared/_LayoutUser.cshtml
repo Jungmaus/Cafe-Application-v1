@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>User Panel</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h2 style="color:gray;float:left;background-color:antiquewhite">Cafe Uygulaması | User Panel</h2>
+    <center>
+        <div class="row">
+            <a href="@Url.Action("Index","Home")"><span class="btn btn-info">Ana Sayfa</span></a>
+            <a href="@Url.Action("Orders", "User")"><span class="btn btn-info">Orders</span></a>
+            <a href="@Url.Action("Bakiye", "User")"><span class="btn btn-info">Bakiye Ekle</span></a>
+            <a href="@Url.Action("Settings", "User")"><span class="btn btn-info">Settings</span></a>
+        </div>
+    </center>
+
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

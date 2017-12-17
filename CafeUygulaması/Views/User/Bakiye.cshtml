@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Bakiye";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<br /><br />
+
+<center>
+
+    <h2>Bakiye Ekle</h2>
+    @using (Html.BeginForm("Bakiye", "User", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <label>Bakiye Kodu: </label>
+        <br />
+        <input type="text" maxlength="20" name="Kod" placeholder="Bakiye Kodu" />
+        <br />
+        <button>Kodu Kullan !</button>
+    }
+
+</center>
